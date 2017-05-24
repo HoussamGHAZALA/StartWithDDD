@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository
 import org.springframework.stereotype.Service
 
 /**
- * Created by douihech on 12/05/17.
+ * Created by hghazala on 12/05/17.
  */
 @Service
 open class ConsommateurService(val consommateurRepository: ConsommateurRepository,

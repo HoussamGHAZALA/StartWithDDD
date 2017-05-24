@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository
  * Created by hghazala on 03/05/17.
  */
 @Repository
-open interface ProduitRepository: JpaRepository<ProduitEntity, Int> {
+open interface ProduitRepository: JpaRepository<ProduitEntity, Long> {
 
 }

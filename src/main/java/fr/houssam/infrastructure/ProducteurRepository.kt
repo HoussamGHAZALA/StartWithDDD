@@ -10,5 +10,4 @@ import org.springframework.stereotype.Repository
 @Repository
 open interface ProducteurRepository: JpaRepository<ProducteurEntity, Long> {
     fun findByRegion(codeRegion: Long): List<ProducteurEntity>
-
 }

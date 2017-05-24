@@ -74,10 +74,6 @@ open class ProducteurEntity(@Id
     }
 }
 
-class NonAuthorizedProduct : Throwable() {
+class NonAuthorizedProduct : Throwable()
 
-}
-
-class UserInscriptionException(s: String) : Throwable() {
-
-}
+class UserInscriptionException(s: String) : Throwable()

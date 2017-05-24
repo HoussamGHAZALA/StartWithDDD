@@ -18,11 +18,15 @@ open class ConsommateurEntity(@Id
 
     @EventListener(condition = "#prixModifiedEvent.sensPrix == BAISSE")
     public fun notifyByMail(prixModifiedEvent: PrixModifiedEvent) {
-        registerEvent(MailNotification(consommateurAdresseEmail,
-                "Baisse de prix",
-                "Bonjour, profitez de cette baisse de prix")
+        registerEvent(
+                MailNotification(
+                        consommateurAdresseEmail,
+                        "Baisse de prix",
+                        "Bonjour, profitez de cette baisse de prix"
+                )
         )
     }
+
 }
 
 class Region(var nomRegion: String,

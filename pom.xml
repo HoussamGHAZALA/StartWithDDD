@@ -56,8 +56,26 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.massa.mrules.extensions</groupId>
+            <artifactId>spring</artifactId>
+            <version>1.9.1</version>
+        </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>mrprof</id>
+            <activation><activeByDefault>true</activeByDefault></activation>
+            <repositories>
+                <repository>
+                    <id>mrules</id>
+                    <name>mrules</name>
+                    <url>http://mrules.xyz/pubrepo</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
 	<build>
 		<plugins>
 			<plugin>
