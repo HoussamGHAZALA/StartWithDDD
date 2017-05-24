@@ -13,13 +13,24 @@ open class CommandService(val producteurRepository: ProducteurRepository,
                           val consommateurRepository: ConsommateurRepository,
                           val produitRepository: ProduitRepository) {
 
-
-    //TODO
-    public fun acheteUnProduitAUnProducteur(consommateurId: Long,
-                                            produitId: Long,
-                                            producteurId: Long) {
-        val producteur = this.producteurRepository.findOne(producteurId)
+    
+    public fun ajouteUnProduitAUnPanier(produitId: Long, consommateurId: Long) {
         val consommateur = this.consommateurRepository.findOne(consommateurId)
         val produit = this.produitRepository.findOne(produitId)
+        consommateur.panier.produits.add(produit)
+        consommateurRepository.save(consommateur)
     }
+
+    public fun acheterUnProduitAUnProducteur(consommateurId: Long,
+                                             produitId: Long,
+                                             producteurId: Long) {
+        val producteur = this.producteurRepository.findOne(producteurId)
+        val consommateur = this.consommateurRepository.findOne(consommateurId)
+        //TODO We can add Event of payment
+        producteur.produitsEnVente.removeAll(
+                consommateur.panier.produits
+        )
+        producteurRepository.save(producteur)
+    }
+
 }

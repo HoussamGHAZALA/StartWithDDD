@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository
  * Created by hghazala on 12/05/17.
  */
 @Repository
-open interface ConsommateurRepository: JpaRepository<ConsommateurRepository, Long> {
+open interface ConsommateurRepository: JpaRepository<ConsommateurEntity, Long> {
 
 }

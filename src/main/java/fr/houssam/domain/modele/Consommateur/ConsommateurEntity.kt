@@ -1,6 +1,8 @@
 package fr.houssam.domain.modele.Consommateur
 
 import fr.houssam.domain.PrixModifiedEvent
+import fr.houssam.domain.modele.Producteur.entity.ProduitEntity
+import fr.houssam.valueObject.Panier
 import org.hibernate.validator.constraints.Email
 import org.springframework.context.event.EventListener
 import org.springframework.data.domain.AbstractAggregateRoot
@@ -13,7 +15,8 @@ import javax.persistence.Id
 @Entity
 open class ConsommateurEntity(@Id
                               val consommateurId: Long,
-                              val consommateurAdresseEmail: Email
+                              val consommateurAdresseEmail: Email,
+                              val panier: Panier
                               ): AbstractAggregateRoot() {
 
     @EventListener(condition = "#prixModifiedEvent.sensPrix == BAISSE")
